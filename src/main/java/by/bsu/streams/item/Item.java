@@ -1,4 +1,4 @@
-package by.bsu.strems.item;
+package by.bsu.streams.item;
 
 
 import java.util.List;

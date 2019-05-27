@@ -1,6 +1,6 @@
-package by.bsu.strems.main;
+package by.bsu.streams.main;
 
-import by.bsu.strems.item.Item;
+import by.bsu.streams.item.Item;
 import com.github.javafaker.Faker;
 
 import java.util.*;
@@ -9,7 +9,6 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 

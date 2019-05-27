@@ -2,6 +2,7 @@ package by.bsu.strems.item;
 
 
 import java.util.List;
+import java.util.Objects;
 
 public class Item {
     private final long ID;
@@ -50,6 +51,22 @@ public class Item {
 
     public void setProducingCountries(List<String> producingCountries) {
         this.producingCountries = producingCountries;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Item)) return false;
+        Item item = (Item) o;
+        return getID() == item.getID() &&
+                Double.compare(item.getPrice(), getPrice()) == 0 &&
+                getName().equals(item.getName()) &&
+                getProducingCountries().equals(item.getProducingCountries());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getID(), getPrice(), getName(), getProducingCountries());
     }
 
     @Override

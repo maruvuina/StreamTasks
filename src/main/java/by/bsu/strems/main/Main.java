@@ -30,7 +30,7 @@ public class Main {
         List<Item> itemList =  new ArrayList<>();
 
         int n = 10;
-        for(int i = 1; i< n; i++){
+        for(int i = 0; i< n; i++){
             itemList.add(
                     new Item(new Random().nextDouble()*1000, new Faker().name().title()));
         }

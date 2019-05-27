@@ -305,6 +305,5 @@ public class Main {
 
         System.out.println("Count of items that have a producing country Japan: " + japanProducing);
         System.out.println("End task 14");
-
     }
 }

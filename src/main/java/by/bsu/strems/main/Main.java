@@ -9,6 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -30,7 +31,7 @@ public class Main {
         List<Item> itemList =  new ArrayList<>();
 
         int n = 10;
-        for(int i = 0; i< n; i++){
+        for(int i = 0; i < n; i++){
             itemList.add(
                     new Item(new Random().nextDouble()*1000, new Faker().name().title()));
         }
@@ -286,5 +287,23 @@ public class Main {
 
         countries.forEach(System.out::println);
         System.out.println("End task 13");
+
+
+        System.out.println("\n Task 14");
+        System.out.println("Count of items that have a producing country Japan\n");
+
+        String jap = "Japan";
+
+        int japanProducing = (int) itemList
+                .stream()
+                .filter(Objects::nonNull)
+                .flatMap(item ->
+                        item.getProducingCountries()
+                        .stream())
+                        .filter(country -> country.equals(jap))
+                        .count();
+
+        System.out.println("Count of items that have a producing country Japan: " + japanProducing);
+        System.out.println("End task 14");
     }
 }
